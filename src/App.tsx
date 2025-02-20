@@ -1,13 +1,13 @@
-import { Grid, GridItem, Show, HStack, Text, Image } from "@chakra-ui/react";
-import logo from "./assets/logo.svg";
+import { Grid, GridItem, Show, HStack } from "@chakra-ui/react";
+
+import NavBar from "./Components/NavBar";
 function App() {
   return (
     <Grid templateAreas={{ base: `"nav nav"`, lg: `"aside main"` }}>
       <HStack>
         <GridItem area={"nav"}>
-          <Image src={logo} boxSize="60px" />
+          <NavBar />
         </GridItem>
-        <Text>Header</Text>
       </HStack>
       <Show above="lg">
         <GridItem area={"aside"} bgColor="lightblue">

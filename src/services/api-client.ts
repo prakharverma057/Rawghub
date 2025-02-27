@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://api.rawg.io/api",
-  params: {
-    key: "0feff1e079334741969ac2d719d1c391",
-  }
+  baseURL: "https://www.freetogame.com/api",
+  // params: {
+  //   key: "3f41e4e5db0a4d6baa25c5356c67d9c0",
+  // },
 });

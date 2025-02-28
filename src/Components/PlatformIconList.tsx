@@ -1,6 +1,5 @@
-import React from "react";
 import { Game } from "../hooks/useGame";
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import {
   FaWindows,
   FaPlaystation,
@@ -10,7 +9,7 @@ import {
   FaLinux,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiApplearcade, SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
 
@@ -21,21 +20,26 @@ interface Props {
 
 const PlatformIconList = ({ games }: Props) => {
   const iconMap: { [key: string]: IconType } = {
-    PC: FaWindows,
+    pc: FaWindows,
     playstation: FaPlaystation,
-    Xbox: FaXbox,
-    Mac: FaApple,
-    Android: FaAndroid,
-    nintendo: SiNintendo,
-    iPhone: MdPhoneIphone,
-    Browser: BsGlobe,
-    Linux: FaLinux,
+    xbox: FaXbox,
+    "Nintendo Entertainment System": SiNintendo,
+    mac: FaApple,
+    linux: FaLinux,
+    android: FaAndroid,
+    ios: MdPhoneIphone,
+    web: BsGlobe,
+    Arcade: SiApplearcade,
   };
   return (
     <HStack marginY={1}>
       {games.map((game) =>
         game.platforms.map((platform) => (
-          <Icon as={iconMap[platform]} color="gray.500" />
+          <Icon
+            key={platform.id}
+            as={iconMap[platform.name.toLowerCase()]}
+            color="gray.500"
+          />
         ))
       )}
     </HStack>

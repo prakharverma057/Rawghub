@@ -10,14 +10,16 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card>
       {/* <Image src={game.thumbnail} alt={game.title} /> */}
-      <Image src={game.image.original_url} alt={game.name} />
+      <Image src={game.image.small_url} alt={game.name} />
       <CardBody>
         {/* <Heading fontSize={"2xl"}>{game.title}</Heading> */}
         <Heading fontSize={"2xl"}>{game.name}</Heading>
-        <PlatformIconList
-          platforms={game.platforms.map((p) => p.platform)}
-          games={[game]}
-        />
+        {game.platforms && (
+          <PlatformIconList
+            platforms={game.platforms.map((p) => p.platform)}
+            games={[game]}
+          />
+        )}
       </CardBody>
     </Card>
   );

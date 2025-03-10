@@ -27,7 +27,7 @@ const useData = <T>(
         })
         .then((res) => {
           //console.log(res.data);
-          console.log("fetched data", res.data.results);
+          console.log("fetched data", res.data.results[0]);
           setIsLoading(false);
           setData(res.data.results);
         })

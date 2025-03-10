@@ -1,10 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  //baseURL: "https://www.freetogame.com/api",
-  baseURL: "https://www.giantbomb.com/api",
+  baseURL: "https://api.rawg.io/api",
   params: {
-    api_key: "f8f7372606436fc818a47bc2ef4fc6e5ca81cb45",
-    format: "json",
+    key: "109e1def2ccd4646b32781a56ea74bb3",
   },
 });

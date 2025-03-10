@@ -9,12 +9,13 @@ interface Props {
 const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   const sortOrders = [
     { value: "", label: "Relevance" },
-    { value: "date_added:desc", label: "Date Added(Latest)" },
-    { value: "name:asc", label: "Name(A-Z)" },
-    { value: "name:desc", label: "Name(Z-A)" },
-    { value: "number_of_user_reviews:desc", label: "Reviews(Best-Low)" },
-    { value: "original_release_date:asc", label: "Released(Old-New)" },
-    { value: "original_release_date:desc", label: "Released(New-Old)" },
+    { value: "-added", label: "Date Added(Latest)" },
+    { value: "name", label: "Name(A-Z)" },
+    { value: "-name", label: "Name(Z-A)" },
+    { value: "-rating", label: "Avg Rating" },
+    { value: "-released", label: "Released(Old-New)" },
+    { value: "released", label: "Released(New-Old)" },
+    { value: "-metacritic", label: "Popularity" },
   ];
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder

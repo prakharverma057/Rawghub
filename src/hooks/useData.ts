@@ -26,8 +26,8 @@ const useData = <T>(
           ...requestConfig,
         })
         .then((res) => {
-          //console.log(res.data);
-          console.log("fetched data", res.data.results[0]);
+          
+          console.log("fetched data", res.data.results);
           setIsLoading(false);
           setData(res.data.results);
         })

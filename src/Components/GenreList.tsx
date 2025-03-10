@@ -33,7 +33,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 boxSize="32px"
                 borderRadius={8}
                 objectFit="cover"
-                src={genre.image.icon_url}
+                src={genre.image_background}
               />
               <Button
                 variant="link"

@@ -1,12 +1,14 @@
 import { GameQuery } from "../App";
 import useData from "./useData";
+import { Platform } from "./usePlatform";
 
 export interface Game {
   id: number;
   name: string;
-  //title: string;
-  //thumbnail: string;
-  image: { original_url: string; medium_url: string; small_url: string };
+  background_image: string;
+  parent_platforms: { platform: Platform }[];
+  metacritic: number;
+  rating_top: number;
   platforms: {
     map(arg0: (platform: any) => import("react/jsx-runtime").JSX.Element): any;
     platform: any;
@@ -22,8 +24,8 @@ const useGame = (gameQuery: GameQuery) =>
       params: {
         genre: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
-        sort: gameQuery.sortOrder,
-        query: gameQuery.searchText,
+        ordering: gameQuery.sortOrder,
+        search: gameQuery.searchText,
       },
     },
     [gameQuery]

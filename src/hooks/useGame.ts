@@ -6,7 +6,7 @@ export interface Game {
   name: string;
   //title: string;
   //thumbnail: string;
-  image: { original_url: string; medium_url: string, small_url: string };
+  image: { original_url: string; medium_url: string; small_url: string };
   platforms: {
     map(arg0: (platform: any) => import("react/jsx-runtime").JSX.Element): any;
     platform: any;
@@ -23,6 +23,7 @@ const useGame = (gameQuery: GameQuery) =>
         genre: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
         sort: gameQuery.sortOrder,
+        query: gameQuery.searchText,
       },
     },
     [gameQuery]

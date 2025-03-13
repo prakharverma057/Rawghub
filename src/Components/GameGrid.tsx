@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
 import { Game } from "../hooks/useGame";
@@ -35,7 +35,6 @@ const GameGrid = ({ gameQuery }: Props) => {
         className="masonry-grid"
         columnClassName="masonry-grid_column"
         padding={10}
-        
       >
         {isLoading &&
           skeletons.map((skeleton) => (
